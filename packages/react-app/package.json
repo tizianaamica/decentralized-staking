@@ -97,7 +97,6 @@
     "ship": "yarn surge",
     "theme": "npx gulp less",
     "watch": "node ./scripts/watch.js",
-    "prettier": "npx prettier --write . '!(node_module|build)/**/*'",
-    "verify": "hardhat etherscan-verify --api-key CZ1AWX4ASWJMVT328MB5ZIBU6V7R6HSIF8"
+    "prettier": "npx prettier --write . '!(node_module|build)/**/*'"
   }
 }
