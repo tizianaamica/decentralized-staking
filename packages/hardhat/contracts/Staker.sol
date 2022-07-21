@@ -12,7 +12,7 @@ contract Staker {
     uint256 public constant threshold = 1 ether;
 
     //set deadline
-    uint256 public deadline = block.timestamp + 30 seconds;
+    uint256 public deadline = block.timestamp + 72 hours;
 
     bool public openForWithdraw;
 
@@ -47,6 +47,7 @@ contract Staker {
     // ( Make sure to add a `Stake(address,uint256)` event and emit it for the frontend <List/> display )
 
     function stake() public payable deadlinePassed(false) stakingNotCompleted {
+        require(msg.value > 0, "Invalid amount");
         balances[msg.sender] += msg.value;
         emit Stake(msg.sender, msg.value);
     }
